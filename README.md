@@ -6,3 +6,4 @@ This project includes inspiration and functionality from the Tensorflow Group an
 
 The tensorflow Mobilenet model I'm using isn't ideal in that even with 1000 items to suggest, it doesn't recognize people or faces, and may be subject to suggesting that you are a cockatoo.  Have Fun!
 
+![sandi](https://user-images.githubusercontent.com/40084298/42117405-dec82e4e-7bc1-11e8-8174-537901091f6e.jpg)
