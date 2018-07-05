@@ -146,7 +146,7 @@ input:checked + .slider:after
 	padding: 2px;
       }
       #txtMessage {
-	width: 90%;
+	width: 85%;
 	right-margin: 5px;
 	padding: 2px;
       }
@@ -157,7 +157,7 @@ input:checked + .slider:after
         border-width: 1px;
 	border-radius: 12px;
 	border-color: lightblue;
-	width: 90%;
+	width: 98%;
 	height: 80px;
 	padding: 10px;
 	font: Arial;
@@ -176,7 +176,7 @@ input:checked + .slider:after
         border-width: 1px;
 	border-radius: 12px;
 	border-color: lightblue;
-	width: 90%;
+	width: 98%;
 	height: 140px;
 	padding: 10px;
 	font: Arial;
@@ -271,13 +271,16 @@ input:checked + .slider:after
         </td>
 
       </tr>
+	<td colspan="2"><input type="submit" style="position:absolute; left: 70%; name="send" value="Send Message" style="height:25px; width:120px" float:right /></td>
       <tr>
+
         <td>Message:</td>
-        <td><input type="text" name="message" id="txtMessage" size="80" style="height:25px"/></td>
+
+        <td><input type="text" name="message" id="txtMessage" size="85" style="height:25px"/></td>
 
 
      </tr>
-	<td colspan="2"><input type="submit" style="position:absolute; left: 65%; name="send" value="Send Message" style="height:25px; width:120px" float:right /></td>
+
 
       <!-----Added this row for Speech Recognition-------------------------------------------------------->
       <tr>
@@ -599,7 +602,7 @@ timer = setInterval( take_snapshot, 9000 );
 function take_snapshot() {
     Webcam.snap(function(data_uri) {
     document.getElementById('results').innerHTML = '<img id="base64image" style="display: none;" src="'+data_uri+'"/>';
-    document.getElementById("loading").innerHTML="Saving, please wait...";
+    document.getElementById("loading").innerHTML="";
     var file =  document.getElementById("base64image").src;
     var formdata = new FormData();
     formdata.append("base64image", file);
@@ -647,20 +650,22 @@ function mytoggle() {
 //----------------------------------------------------------------------------------------------------
 </script>
 
-<div id="my_camera" style="width: 224px; height: 224px;float:right"></div>
+
 <div id="status">&nbsp;</div>
-
-
-<span id="loading" src=""></span><img id="cat" style="display: none;" style src="cat.jpg" alt="" width="224" height="224/" />
-<div id="predictions">&nbsp;
-<div id="results"></div>
-<div id="Saved"></div>
+<div id="my_camera" style="width: 224px; height: 224px;float:right"></div>
 </div>
+
 <p><img id="cat" style="display: none;" src="cat.jpg" alt="" width="224" height="224/" /></p>
 
+<div id="results"></div>
+<div id="predictions"></div>
+
+<span id="loading" src=""></span><img id="cat" style="display: none;" style src="" alt="" width="224" height="224/" />
+
+</div>
 
 <script type="text/javascript" src="sandicammoblenet.js">
-</body>
+
 </script>
 <script language="JavaScript">
 		Webcam.set({
