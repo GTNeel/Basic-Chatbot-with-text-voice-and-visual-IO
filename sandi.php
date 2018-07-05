@@ -11,7 +11,7 @@
     <style type="text/css">
 
 .switch {
- float:right;
+  float:right;
   position: relative;
   display: inline-block;
   width: 90px;
@@ -117,7 +117,7 @@ input:checked + .slider:after
 	min-width: 600px;
 	min-height: 200px;
 	width: 90%;
-    overflow: auto;
+        overflow: auto;
 	margin: 0px auto;
 	font-family: Arial;
 	font-size: 12pt;
@@ -126,9 +126,10 @@ input:checked + .slider:after
       }
       
 	  #form_table {
+        float:Left;
         min-width: 600px;
         min-height: 200px;
-        width: 90%;
+        width: 80%;
         height: 120px;
         overflow: auto;
         margin: 10px auto;
@@ -145,18 +146,18 @@ input:checked + .slider:after
 	padding: 2px;
       }
       #txtMessage {
-	width: 95%;
+	width: 90%;
 	right-margin: 5px;
 	padding: 2px;
       }
       #speechcontainer {
-        overflow: auto;
-	margin: 10px auto;
+        float:left;
+        margin: 30px auto;
         border-style: solid;
         border-width: 1px;
 	border-radius: 12px;
 	border-color: lightblue;
-	width: 110%;
+	width: 90%;
 	height: 80px;
 	padding: 10px;
 	font: Arial;
@@ -170,8 +171,7 @@ input:checked + .slider:after
       }
 
       #leeng {
-        overflow:auto;
-	margin: 10px auto;
+        margin: 10px auto;
         border-style: solid;
         border-width: 1px;
 	border-radius: 12px;
@@ -188,6 +188,7 @@ input:checked + .slider:after
 
       #camcontainer {
     position: absolute;
+    float:right;
     top: 35%;
     left: 85%;
 	margin: 10px auto;
@@ -268,13 +269,15 @@ input:checked + .slider:after
           <input type="text" id="txtUser" name="user" size="20"  style="height:25px" value="User" />
           <input type="hidden" name="send" />
         </td>
+
       </tr>
       <tr>
         <td>Message:</td>
         <td><input type="text" name="message" id="txtMessage" size="80" style="height:25px"/></td>
-	<td colspan="2"><input type="submit" name="send" value="Send Message" style="height:25px; width:120px"  /></td>
+
 
      </tr>
+	<td colspan="2"><input type="submit" style="position:absolute; left: 65%; name="send" value="Send Message" style="height:25px; width:120px" float:right /></td>
 
       <!-----Added this row for Speech Recognition-------------------------------------------------------->
       <tr>
@@ -619,7 +622,7 @@ var conf="";
 var imgurl=pre+y+post;
 tempuser=txtUser.value;
 txtUser.value=("visualsys")
-txtMessage.value = (obj+" "+imgurl+" "+conf);
+txtMessage.value = (obj+" "+imgurl+" ~"+conf);
  $('#frmChat').submit(); 
 txtUser.value=tempuser;}, 4000);
 });
@@ -643,15 +646,18 @@ function mytoggle() {
 
 //----------------------------------------------------------------------------------------------------
 </script>
+
+<div id="my_camera" style="width: 224px; height: 224px;float:right"></div>
 <div id="status">&nbsp;</div>
-<div id="results"></div>
-<div id="my_camera"></div>
-<div id="Saved"></div>
+
 
 <span id="loading" src=""></span><img id="cat" style="display: none;" style src="cat.jpg" alt="" width="224" height="224/" />
-
-<div id="predictions">&nbsp;</div>
+<div id="predictions">&nbsp;
+<div id="results"></div>
+<div id="Saved"></div>
+</div>
 <p><img id="cat" style="display: none;" src="cat.jpg" alt="" width="224" height="224/" /></p>
+
 
 <script type="text/javascript" src="sandicammoblenet.js">
 </body>

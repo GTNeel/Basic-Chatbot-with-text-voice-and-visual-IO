@@ -261,40 +261,40 @@ psychobabble = [
 
 
 chances = [
-    [r'(.*)0.6(.*)',
+    [r'(.*)~0.6(.*)',
      ["If I had to make a wild guess, it looks like a {0}.",
       "Maybe I need glasses, but it could be a {0}.",
       "I shouldn't even try to guess this as a {0}."]],
 
-    [r'(.*)0.7(.*)',
+    [r'(.*)~0.7(.*)',
      ["Are you sure the lighting is good, because it looks like a {0}.",
       "Maybe I need glasses, but it could be a {0}.",
       "Is your monitor clean... I\'m guessing this as a {0}."]],
 
-    [r'(.*)0.8(.*)',
+    [r'(.*)~0.8(.*)',
      ["if I had to make a wild guess, it looks like a {0}.",
       "Maybe I need glasses, but it could be a {0}.",
       "I shouldn't even try to guess this as a {0}."]],
 
-    [r'(.*)0.9(.*)',
+    [r'(.*)~0.9(.*)',
      ["if I had to make a wild guess, it looks like a {0}.",
       "Maybe I need glasses, but it could be {0}.",
       "I shouldn't even try to guess this as a {0}."]],
 
-    [r'(.*)1.(.*)',
+    [r'(.*)~1.(.*)',
      ["I\'m not the most experienced bot but, it looks like a {0}.",
       "Perhaps I\'m seeing a {0}.",
       "Maybe you should clean your glasses, because I\'m seeing a {0}.",
       "OK--right or wrong, I\'ll just blurt it out...{0}."]],
 
-    [r'(.*)2.(.*)',
+    [r'(.*)~2.(.*)',
      ["I\'m fairly sure what I see is a {0}.",
       "I\'m not positive, but I think I see a {0}.",
       "Isn\'t that a {0}.",
       "Don\'t laugh, I think it\'s a {0}."]],
 
     [r'(.*)',
-     ["I got something on my lens, couldn\'t be a {0}.",
+     ["Maybe I got something on my lens, couldn\'t be a {0}.",
       "The funniest things I see with my imagination--I see a {0}.",
       "Do you believe I have an imagination?...that\'s a {0}.",
       "Don\'t laugh, I think it\'s a {0}."]],
@@ -322,9 +322,7 @@ def speculate(statement):
         if match:
             response = random.choice(responses)
             return response.format(*[reflect(g) for g in match.groups()])
-
-
-
+           
 def main():
     ts = time.time()
     timestamp = datetime.datetime.fromtimestamp(ts).strftime("%a %b-%d %I:%M %p")
@@ -364,3 +362,4 @@ def main():
     res=""
 if __name__ == "__main__":
     main()
+
