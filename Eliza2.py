@@ -351,8 +351,7 @@ def main():
     Punchation=res[-1:]
     if user== 'visualsys': name=""
  
-    if name== '':
-        res=(res)
+    if name== '': pass
     else:
         res=(res.rstrip(string.punctuation)+", "+name+Punchation)
     if res=='': res="I got nothin."
