@@ -352,7 +352,7 @@ def main():
     if user== 'visualsys': name=""
  
     if name== '':
-        res=(res.rstrip(string.punctuation)+Punchation)
+        res=(res)
     else:
         res=(res.rstrip(string.punctuation)+", "+name+Punchation)
     if res=='': res="I got nothin."
